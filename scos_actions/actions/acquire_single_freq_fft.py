@@ -275,7 +275,8 @@ class SingleFrequencyFftAcquisition(MeasurementAction):
             description=(
                 "Results of min, max, mean, and median statistical detectors, "
                 + f"along with a random sampling, from a set of {self.nffts} "
-                + f"DFTs, each of length {self.fft_size}, computed from IQ data."
+                + f"DFTs, each of length {self.fft_size}, computed from IQ data:"
+                + ",".join([str(val) for val in measurement_result["data"].ravel()])
             ),
         )
 
